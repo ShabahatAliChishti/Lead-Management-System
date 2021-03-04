@@ -1,0 +1,252 @@
+﻿@model LeadManagementSystems.Models.UserModel
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="~/Content/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/Content/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link href="~/Content/plugins/morris1/morris.css" rel="stylesheet" />
+   @* <link rel="stylesheet" href="~/Content/plugins/morris/morris.css">*@
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="~/Content/plugins/jvectormap1/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="~/Content/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/Content/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+    <style>
+        .content-wrapper, .right-side, .main-footer {
+            margin-left: 0px;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+
+                <!-- Small boxes (Stat box) -->
+                <div class="sh-mainpanel">
+                    <div class="signpanel-wrapper">
+                        <div class="signbox">
+
+                            <div class="signbox-body">
+                            <div>
+                                <img src="~/Content/dist/img/Appicoders-Inc.png" class="img-responsive" style="margin-bottom:20px"/>
+                            </div>                     
+                                <form id="loginform">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Email:</label>
+                                        @*<input type="email" name="email" placeholder="Enter your email" class="form-control">*@
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control",@placeholder = "Enter Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div><!-- form-group -->
+                                    <div class="form-group">
+                                        <label class="form-control-label">Password:</label>
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control",@placeholder="Enter Password" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div><!-- form-group -->
+                                    <div class="form-group">
+                                        @*<a href="forgot-password.html">Forgot password?</a>*@
+                                    </div><!-- form-group -->
+                                </form>
+                                <button id="btnlogin" class="btn btn-success btn-block text-uppercase">Sign In</button>
+                                @*<div class="tx-center bg-white bd pd-10 mg-t-40">Not yet a member? <a href="signup.html">Create an account</a></div>*@
+                            </div><!-- signbox-body -->
+                        </div><!-- signbox -->
+                    </div><!-- signpanel-wrapper -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <footer class="main-footer">
+            <!--<div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>-->
+
+            <strong>Copyright &copy; 2019-2020 <a href="#">Appicoders</a>.</strong> All rights reserved.
+        </footer>
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    <script src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+  $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/dist/js/jquery.validate.min.js"></script>
+    <script src="~/Content/dist/js/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <script src="~/Content/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+           
+                
+                $('#btnlogin').click(function (e) {
+                    e.preventDefault();
+                    var form = $("#loginform");
+                    var formdata = new FormData(form[0]);
+                   
+
+                    $.validator.unobtrusive.parse(form);
+                    if ($(form).valid()) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Account/AccountInfo",
+                            data: $(form).serialize(),
+                            //cache : false,
+                            //processData: false,
+                            success: function (res) {
+                                if (res.code==200) {
+                                    Command: toastr["success"]("success", "Login successful")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                    window.location.href = "/Dashboard/Dashboard"
+                                }
+                                else if (res.code!=200) {
+                                        Command: toastr["error"]("Invalid Credentials", "Login Failed")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                }
+                            },
+                            failure: function (res) {
+                                console.log(res);
+                            },
+                            err: function (res) {
+                                console.log(res);
+                            }
+
+                        })
+                    }
+                    else {
+                        return false;
+                    }
+
+
+
+                });
+
+          
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- Morris.js charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="~/Content/plugins/morris1/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/Content/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="~/Content/plugins/jvectormap1/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Content/plugins/jvectormap1/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="~/Content/plugins/knob1/jquery.knob.js"></script>
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="~/Content/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="~/Content/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="~/Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="~/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/app.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Content/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/dist/js/demo.js"></script>
+
+    
+
+</body>
+</html>
+
+

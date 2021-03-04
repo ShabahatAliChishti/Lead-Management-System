@@ -1,0 +1,401 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<link href="~/Content/Dashboard_style.css" rel="stylesheet" />
+
+<section id="tabs" class="project-tab ">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <div class="col-lg-4 col-xs-6 text-center">
+                                <!-- small box -->
+                                <div class="small-box bg-aqua"><img src="~/Content/dist/img/leads-img.jpg" class="img-responsive" alt="LEADS Image" id="actvleaddashbrd"> <span class="text-uppercase text-dash">Active leads</span> </div>
+                            </div>
+                        </a> 
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <div class="col-lg-4 col-xs-6 text-center">
+                                <!-- small box -->
+                                <div class="small-box bg-aqua"><img src="~/Content/dist/img/users-img.jpg" class="img-responsive" alt="LEADS Image"> <span class="text-uppercase text-dash">Todays Follow Up</span> </div>
+                            </div>
+                        </a>
+                         <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                            <div class="col-lg-4 col-xs-6 text-center">
+                                <!-- small box -->
+                                <div class="small-box bg-aqua"><img src="~/Content/dist/img/close-img.jpg" class="img-responsive" alt="LEADS Image"> <span class="text-uppercase text-dash">Closed Leads</span> </div>
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="col-sm-12 ">
+                            <h2>Active leads</h2>
+                            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th colspan="1">Date</th>
+                                        <th colspan="1">Time</th>
+                                        <th colspan="1">Lead Type</th>
+                                        <th colspan="1">Client Name</th>
+                                        <th colspan="1">Contact No</th>
+                                        <th colspan="1">Email</th>
+                                        <th colspan="1">Timezone</th>
+                                        <th colspan="1">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        if (ViewBag.ActiveLeadsForDashboard != null)
+                                        {
+                                            foreach (var activeleads in ViewBag.ActiveLeadsForDashboard)
+                                            {
+                                                
+
+                                                <tr role="row" class="odd">
+                                                    <td>@activeleads.LeadDate.ToString("dd/MM/yyyy")</td>
+                                                    <td>@activeleads.LeadTime</td>
+                                                    <td>@activeleads.LeadTypeName</td>
+                                                    <td>@activeleads.ClientName</td>
+                                                    <td>@activeleads.ContactNo</td>
+                                                    <td>@activeleads.Email</td>
+                                                    <td>@activeleads.TimeZoneName</td>
+                                                    <td><button type="button" class="btn btn-danger" onclick="ShowCustomer(' + @activeleads.LeadID + ')">View</button> &nbsp;<button type="button" class="btn btn-primary" onclick="ConfirmDelete(' + @activeleads.LeadID + ')">Edit</button></td>
+                                                </tr>
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="col-sm-12 ">
+                            <h2>Todays Follow Up</h2>
+                            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th colspan="1">Date</th>
+                                        <th colspan="1">Time</th>
+                                        <th colspan="1">Lead Type</th>
+                                        <th colspan="1">Client Name</th>
+                                        <th colspan="1">Contact No</th>
+                                        <th colspan="1">Email</th>
+                                        <th colspan="1">Timezone</th>
+                                        <th colspan="1">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        if (ViewBag.FollowUpLeadsForDashboard != null)
+                                        {
+                                            foreach (var activeleads in ViewBag.FollowUpLeadsForDashboard)
+                                            {
+                                               
+
+                                                <tr role="row" class="odd">
+                                                    <td>@activeleads.LeadDate.ToString("dd/MM/yyyy")</td>
+                                                    <td>@activeleads.LeadTime</td>
+                                                    <td>@activeleads.LeadTypeName</td>
+                                                    <td>@activeleads.ClientName</td>
+                                                    <td>@activeleads.ContactNo</td>
+                                                    <td>@activeleads.Email</td>
+                                                    <td>@activeleads.TimeZoneName</td>
+                                                    <td><button type="button" class="btn btn-danger" onclick="ShowCustomer(' + @activeleads.LeadID + ')">View</button> &nbsp;<button type="button" class="btn btn-primary" onclick="ConfirmDelete(' + @activeleads.LeadID + ')">Edit</button></td>
+                                                </tr>
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="col-sm-12 ">
+                            <h2>Closed Leads</h2>
+                            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th colspan="1">Date</th>
+                                        <th colspan="1">Time</th>
+                                        <th colspan="1">Lead Type</th>
+                                        <th colspan="1">Client Name</th>
+                                        <th colspan="1">Contact No</th>
+                                        <th colspan="1">Email</th>
+                                        <th colspan="1">Timezone</th>
+                                        <th colspan="1">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   @{
+                                       if (ViewBag.CloseLeadsForDashboard != null)
+                                       {
+                                           foreach (var activeleads in ViewBag.CloseLeadsForDashboard)
+                                           {
+
+
+
+                                            <tr role="row" class="odd">
+                                                <td>@activeleads.LeadDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@activeleads.LeadTime</td>
+                                                <td>@activeleads.LeadTypeName</td>
+                                                <td>@activeleads.ClientName</td>
+                                                <td>@activeleads.ContactNo</td>
+                                                <td>@activeleads.Email</td>
+                                                <td>@activeleads.TimeZoneName</td>
+                                                <td><button type="button" class="btn btn-danger"  onclick="ShowCustomer(' + @activeleads.LeadID + ')">View</button> &nbsp;<button type="button" class="btn btn-primary" onclick="ConfirmDelete(' + @activeleads.LeadID + ')">Edit</button></td>
+                                            </tr>
+                                           }
+                                       }
+                                       else
+                                       {
+
+                                       }
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title text-uppercase" id="exampleModalLabel"><strong>Active LEADS</strong></h4>
+                </div>
+                <div class="modal-body" id="modelbody" style="padding-top:0px;">
+                    <table id="example1" class="table table-bordered table-striped" role="grid" style="margin:0px;">
+
+                        <tbody>
+                            <tr role="row" class="odd">
+                                <td><strong>Date</strong></td>
+                                <td id="ldate">abc</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Time</strong></td>
+                                <td id="ltime">9:00 AM</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Lead Type</strong></td>
+                                <td id="ltype">Direct Call	</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Client Name</strong>	</td>
+                                <td id="lclient">Mike Anderson</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Contact No</strong></td>
+                                <td id="lcontact">123-456-4589</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Email</strong></td>
+                                <td id="lemail">test@gmail.com</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Timezone</strong></td>
+                                <td id="ltimezone">EST</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Location</strong></td>
+                                <td id="llocation">19th Avenue, Adison City, New Jersey</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>IP</strong></td>
+                                <td id="lip">192.123.452.33</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Active / In Active</strong></td>
+                                <td id="lleadstatus">Open</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Budget (idea)</strong></td>
+                                <td id="lbudget">$100.0</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Last Status (as available)</strong></td>
+                                <td id="llaststatus">talk with him on Aug 8, he'll sent us requirements by Monday Jan  30 2020, he'll send project details for POC</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Next Action Plan</strong></td>
+                                <td id="lnxt">call him on Thursday Feb 4th 2020 at 1:00pm</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Initial Requirements</strong></td>
+                                <td id="linitailarequiremnts">A company deals in specific law/legal/ jail specific software products, currently they have desktop applications developed in C++ and Ms. SQL Server. They want to have a cloud based web enabled application and express intensions to pay for the development services. Proposed PHP and My Sql as back end technology, Cary has a meeting with other team members. It has been agreed to have a follow-up call on Monday.</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--<div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section MyScripts {
+
+    @*<script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+           
+            //$.ajax({
+            //    url: "/Lead/GetActiveLeads",
+            //    success: function (data) {
+            //        bindCustomersInDataTable(data);
+            //    }
+
+
+
+            //});
+
+        });
+        //$.ajax({
+        //    url: "/Lead/GetActiveLeads",
+        //    success: function (data) {
+        //        bindCustomersInDataTable(data);
+        //    }
+
+
+
+        //});
+
+        //function bindCustomersInDataTable(data) {
+        //    var status = "Blocked".toString();
+        //    console.log(data);
+        //    var table = $('#example1').DataTable({
+        //        data: data.data,
+
+
+        //        columns: [
+
+        //            {
+        //                "data": "LeadDate",
+        //                "render": function (data, type, row) {
+        //                    //return ConvertToDate(data);
+        //                    return moment(data).format('DD/MM/YYYY');
+        //                    // return moment(row).format('DD/MM/YYYY hh:mm:ss');
+        //                    //return '<a href="#" class="btn btn-info" onclick="UpdateGroupDescription(' + Id + ')"><i class="fa fa-eye">Update And View Description</i><a href="#" class="btn btn-info" onclick="ViewGroupFiles(' + Id + ')"><i class="fa fa-eye">View Files</i>'
+        //                }
+        //            },
+
+
+        //            //{ data: 'LeadDate' },
+        //            { data: 'LeadTime' },
+
+        //            { data: 'LeadTypeName' },//or { data: 'MONTH', title: 'Month' }`
+        //            { data: 'ClientName' },
+        //            { data: 'ContactNo' },
+        //            { data: 'Email' },
+        //            { data: 'TimeZoneName' },
+        //            {
+        //                "data": "LeadID",
+        //                "render": function (ID, type, full, meta) {
+        //                    return '<a href="#" class="btn btn-danger" onclick="ShowCustomer(' + ID + ')">View</a> <a href="#" class="btn btn-primary" onclick="ConfirmDelete(' + ID + ')">Edit</a>'
+
+        //                   // return '<button type="button" class="btn btn-danger" onclick="ShowEmployee(' + ID + ') >View</button>&nbsp;<button type="button" class="btn btn-primary">Edit</button>'
+        //                   // return '<img  src="'+ID+'" />'
+        //                    //return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a>'
+
+        //                },
+        //                "orderable": true,
+        //                "searchable": true,
+
+
+        //            }
+        //        ]
+        //    });
+
+        //}
+        function ShowCustomer(CustomerID) {
+
+            var url = "/Lead/ShowLead?Id=" + CustomerID;
+            $.post(url, function (data) {
+                console.log(data.date);
+                //alert("Data Loaded: " + data);
+
+                $("#ldate").text(moment(data.data[0].LeadDate).format('DD/MM/YYYY'));
+                $("#ltime").text(data.data[0].LeadTime)
+                $("#ltype").text(data.data[0].LeadTypeName)
+                $("#lclient").text(data.data[0].ClientName)
+                $("#lcontact").text(data.data[0].ContactNo)
+                $("#lemail").text(data.data[0].Email)
+                $("#ltimezone").text(data.data[0].TimeZoneName)
+                $("#llocation").text(data.data[0].Location)
+                $("#lip").text(data.data[0].IPAddress)
+                if (data.data[0].LeadStatus == true) {
+                    $("#lleadstatus").text('Active');
+                }
+                else {
+                    $("#lleadstatus").text('Closed');
+                }
+
+                $("#lbudget").text(data.data[0].Budget)
+                $("#llaststatus").text(data.data[0].LastStatus)
+                $("#lnxt").text(data.data[0].NextPlan)
+                $("#linitailarequiremnts").text(data.data[0].IntialRequirements)
+
+
+               // console.log(data.data[0].ClientName);
+
+
+            });
+
+            //$("#modelbody").load(url, function (e) {
+
+            //    console.log("abcd");
+            //   // $("#exampleModal").modal("show");
+            //});
+
+
+            $("#exampleModal").modal("show");
+
+        }
+        function ConfirmDelete(CustomerID) {
+
+            var url = "/Lead/EditLead?Id=" + CustomerID;
+
+            window.location.href = url;
+
+        }
+
+    </script>
+}

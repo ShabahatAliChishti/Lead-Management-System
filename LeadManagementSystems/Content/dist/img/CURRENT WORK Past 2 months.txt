@@ -1,0 +1,440 @@
+Youtube project need the object to be deserialize website json to c sharp
+We will get data from LocationS_SETUP
+
+Query to help out
+
+Remember data will be posted on live server and get data from live server
+
+202.142.180.149 = Server
+
+sa@abs123       = Password 
+
+Code will be given by us like the last code in the previous report next code must be grater than the last previous one and than auto increment them.
+
+select * from LOCATIONS_SETUP where Location_Name = 'Al Karam Square'
+
+select * from LOCATIONS_SETUP where Location_Name = ''
+
+select * from LOCATIONS_SETUP where Location_Name = ''
+
+select * from LOCATIONS_SETUP where ID between  2013565 AND 2014851;
+
+SELECT * FROM LOCATIONS_SETUP
+WHERE ID BETWEEN 2013565 AND 2014851;
+
+Distributor code 000054 shezan code
+username aruser1
+
+Distributor Code 00009 username Iqbaluser1
+
+
+WE will send this data to POS_SETUP table
+
+CCL 2019
+http://localhost:22797/Transactions/CashMemo/CashMemoViewLockedSalewithstchange.aspx
+
+Check that id which is coming is present in database or not
+select * from Transaction_Master where id = ''
+
+http://localhost:22797/Transactions/RetnCashmemo/retnCashmemoAddNew.aspx
+
+sql query = sELECT * fROM BATCH_SETUP
+select batch code and get expiry date through system
+Also have a look at price there is difference between total and actual price
+work through upper link
+
+new work
+Q why its fetching wrong record
+Fetching the record wrongly but its ok in db
+Document number is from 1 table master and ref document is iving us the price
+issue in returncashmemoaddnew sp is not working fine
+check while making cash memo the price is less and when generating it in view than price is different
+queries will help yoou find the document num and their price from the table transaction master and doucument ref
+select * from TRANSACTION_MASTER where Document_No = 'CM-1306191011-00004'
+
+Select * From TRANSACTION_MASTER where Ref_Document = 15885
+
+Select * From TRANSACTION_DETAIL where Transaction_Id= 15886
+http://localhost:22797/Transactions/CashMemo/CashMemoProcessedPrintAllLockedSale.aspx
+
+Be safe :
+Remember live data base for checking the opening and closing amount link
+http://202.142.180.149:85/Transactions/Salesandstockwithstchange.aspx
+
+
+New Work 5 August 2019(stored procedure)
+Business Type insert pos cnic (values) in the report just change the sp.
+link
+Do dry run remove code jo begin se pehle ha.
+than insert the values as we did in dry run
+un parameters ko insert kro jo a rhe ha
+column name business type change nhe karna
+http://202.142.180.149:50/Report/POS/POS%20Pages/PosDetailReport.aspx
+report
+http://localhost:22797/Report/ReportSalesandStockWithStChange.aspx?Opt=0
+
+Check transefer Inn and Transfer out than do the combination do it together but try to get stcoks cause system need stock
+take stock,insert e.g adjustment inn
+make cash memos,change deliver date to doc date than change unprocess to process,than good issue note than generate consolated gin than close day than generate report and see that the price is same or not
+Distributor Code 000014
+Distributor user name ccl = friendsuser1
+Distributor password friends@123
+
+
+Stock adjusment In and Stock Adjustment out together on systems date 8/6/2019 is ok
+Transfer In 8/5/2019 is ok
+Transfer Out is ok
+Stock adjustmetn in and out is ok
+Transfer Inn and out together 8/7/2019
+Transfer Inn and out together opening and closing is same
+8/8/2019 all together
+
+Q.A
+New work 8/6/2019
+Testing setups Module
+When system made transactions than it will not work on those transactions
+http://localhost:22797/Setups/pricelistview.aspx?add=true
+DB = 147/demo-backup
+Product setup = Done final
+Product Price = Done final
+Product Tax = Not our work
+Location setup = Done final But location will not be deleted due to some transactions, and transactions can cause error in searching
+Other = Not our work
+Batch setup = Done final
+Customer setup = Done final
+Supplier setup = Done final
+Department setup = need updation
+Batch setup
+
+8/7/2019
+Testing of new updated OSDA E PROJECT and solving Errors like sessions and code binding
+Setups  Module
+Purchase order
+Purchase requisition
+Matching purchase order with osda e suite,check the functionality
+
+8/8/2019 Work
+
+Customer setup = Back end coding search bar :
+1 Creating Stored Procedure
+2 Binding Grid views.
+
+Supplier setup = Back end coding search bar : 
+1 Creating Stored Procedure
+2 Binding Grid views.
+
+8/9/2016 Work
+
+POS DATA CCL Pharma work : 
+Posting data simple report
+Creating final Report
+Email : controller@bbsul.edu.pk
+Uploading final Report on the Live server.
+
+Depatment setup =  Back end coding search bar :
+1 Creating Stored Procedure
+2 Binding Grid views.
+
+Create Pagenation : Product setup
+
+Create Pagenation : Customer setup sp errors, creating new sp
+
+    
+16-8-2019 After Eid Work
+
+Pos Data CCL inserting data creating the report
+
+Pos Data CCL making final report
+
+Pos Data CCL publishing data on live server
+
+Working on pagenation Creating sp in setup Module for Customer setup
+
+Working on pagenation Creating sp in setup Module for Supplier setup
+
+
+DB = OSDA E
+Server = 147/Demo
+Distributor code = 001234
+Name = admin
+
+19-8-2019 Work = Half Day
+
+Working on pagenation Creating sp for Department setup in setup Module.
+
+Testing whole Setup Module
+
+Working on Purchase Order View Pagenation
+Sp is working ok but we dont have transactions,May be we have to change select query in sp.
+
+20-8-2019 Work
+
+Finding sp errors in Purcahse order
+
+Creating purchase voucher screen
+
+Creating Create voucher screen
+
+Keep one date further when you are checking to date and from date
+
+21-8-2019 Work
+
+Working on Purchase Requsition View creating new sp changing code implementing pagenation.
+
+Worked on EDS intalling crystal report and tried to find errors.
+
+
+22-8-2019 Work Half Day Due to Uni(750)
+
+Pos Data CCL inserting data creating the report
+
+Pos Data CCL making final report
+
+Pos Data CCL publishing data on live server
+
+23-8-2019 Work
+
+Working on EDS IIS Manager trying to publish the project, facing errors
+Worked at Home to solve it
+
+26-8-2019 Work
+
+Working on EDS IIS Manager publish and run EDS builds on IIS Manager.
+Finding the newest build of EDS,Solving errors in Publishing it on IIS Manager.
+
+EDS :
+Username = jawad.ali
+Password = shan@8220
+http://www.meds.com/EDS/Reports/ProFormaReports2.aspx = showing data
+http://www.meds.com/EDS/Reports/CustomerOrderPlacementsReportPage.aspx = Error page
+
+1 =    127.0.0.1      www.MEDS.com = 1 build hosting name 
+2 =    127.0.0.1      www.ED.com   = 2 build hosting name
+Thing to remember :
+
+when its not giving complete u.i it means go to authentication edit it and change it to other bullet than it will work.
+
+27-8-2019 Work
+
+Intallation of crystal reports 
+
+Running reports of EDS Project and Testing.
+
+28-8-2019 Work
+
+Understanding the flow of EDS  
+Debuing the reports and try to run it 
+
+28-8-2019 Work Half day leave cause of uni
+
+Wokring on Payment screen making user interface
+
+Wokring on Payment kncok off screen making user interface   pg 68 osda suite doc
+
+30-8-2019 Work
+
+Wokring on Payment voucher screen making user interface
+
+Wokring on Purchase voucher detail making user interface
+
+Wokring on Close Purchase Document making user interface
+
+Working on Cancel Purchase Document user interface
+
+
+2-9-2019 Work
+
+Testing project before merging on Github
+
+value after id column in data base = 8
+Some Eror occur in Department setup resolving it
+Working on Close Purchase order user interface
+Working on Material Requisition user interface
+
+
+Github Acount
+username = Noor444-bot
+Password = 123Yoyohoneysingh
+
+github file link = https://github.com/umernasir19/OSDAs
+
+3-9-2019 Work 
+http://localhost:22797/Purchase/purchaseorder.aspx?recId=24 = work link
+Working on the Update funcionality of PurchaseOrderView.aspx
+PurcahseOrderView is posting back the data to PurchaseOrder here we are recieving it through id and than setting values in the text box
+Worked on Purchase Order Edit
+Worked on Purchase Order Pagenation making new Stored Procedures
+PurchaseOrder_Master = table we are working on demodatabase
+
+4-9-2019 Work
+http://localhost:22797/Purchase/purchaserequisition.aspx?recId=7
+go to the binding data
+if (ds.Tables[1].Rows.Count > 0)
+
+5-9-2019 Work
+Working on updation of purchase order
+Working on Pagenation of Purchase order
+Working on the user interface of materail requisition 50%
+
+6,7,8,9-2019 = off
+
+10-9-2019 work
+
+Working on the user interface of materail requisition 50%
+Working on the user interface of Closing Stock 100%
+Task = Make Report
+Work that we have completed in OSDA
+Match it with the Flow of OSDA providede by sir
+Than write down the things remaining in the OSDA Document
+
+Worked on creating the progress report of OSDA E
+
+12-9-2019 work
+
+UI purcahse order Item level info
+UI purchase order Setup starting parameters
+Updating others pages UI like Suppliers,Payment,Purchase
+Merging OSDA E Project
+Understanding the flow of code
+Trick
+update = just updating the @iID in stored procedure
+And geting the @iID from Add function
+
+13-9-2019 work
+
+Changing the UI of Material requisition = d
+Making UI of Return Material Requisition = d
+Worked on GRN Miscellaneous screeen user interface = d
+Working on user interface of GRN Charges/Penalty = d
+
+
+16-9-2019 work
+Testing and updating other screens User Interface = d
+Updating the user interface of Create voucher = d
+Updating the user interface of Supplier Bill Amount Tab = d
+Updating the user interface of Payment General tab as per the OSDA document requirement = d
+
+17-9-2019 work
+Updating the user interface of GRN Naration Tab screen
+working on the functionality of Goods receipt note
+
+18-9-2019 work
+Working on functions of GRN like making classes and Pagenation code
+Working on the GRN Parent Document Screen UI
+Working on the GRN Parent Document Functionality
+Updating the user interface of GRN View
+Working on the GRN Parent Document Functionality (Parent Document GRN Selection)
+Working on the GRN View Drop down data binding.
+
+19-9-2019 work
+
+Completing the view parent document code
+Working on the GRN View Add functionality.
+Working on the GRN View Update Functionality.
+
+20-9-2019 work
+Working on the GRN View Drop down data binding.Binding values behind Date,year,period
+Mapping the parameters for GRN View Add functionality and Update functionality 
+understanding the requirnment of OSDA GRN to make its tabels.
+
+
+23-9-2019 wrok
+Updating the user interface of GRN View
+Working on the GRN parent document cash memos bindings and updation functionality
+
+
+
+24-9-2019 work
+Working on the GRN parent document cash memos bindings and Solving Errors
+Adding current cash memos bindings and Deletion of the Binded cash memos.
+Working on the GoodReceiveNote View User Interface and Search Bar
+
+25-9-2019 work
+Working on the GoodReceiveNote View User Interface and Search Bar
+Updating the user interface of Purchase Order Narration View
+Updation of Suppliers Setup pagenation.
+
+
+Woking on user interface of Stock Adjustment Note General 
+Working on user interface of Stock Adjustment Note List 
+Working on user interface of Material Issue Note
+Working on user interface of Stock Tansfer In
+From here
+Working on the Supplier Bill View User interface Screen
+Working on the Supplier Bill Search Bar and Pagenation Functionality 
+Wokring Supplier Bill Add functionality and Update functionality Code 
+Mapping the parameters for Supplier Bill Add functionality and Update functionality =ro 
+Running And Debuging the code. = ro
+Reading OSDA Document and testing the functions = ro
+Working on the Supplier Bill Independent document selection and cash memos bindings and Deletion of the Binded cash memos.= ro today
+Solving error in purchase order = ro today
+Reading OSDA Supplier Bill complete Document =ro
+Working on all the tabs functionality of Supplier Bill,Adjusting the user interface of Supplier Bill. = ro
+Working on all the tabs functionality of Good Receive Note,Adjusting the user interface of Good Receive Note.= ro
+Working on all the tabs functionality of Purchase Voucher,Adjusting the user interface of Purchase Voucher.= ro
+
+Where we did pagenation in Setup module work
+Server = 147/Demo
+Distributor code = 001234
+Name = admin
+
+GoodReceiveNote Wrok
+Distributor Code :E 001234
+User name : ccluser1
+
+26-9-2019 work
+Do the testing of the previous work in setup module with purchase requisition and purchase order and Good Receive Note
+Learn Git Hub and Merge both the Projects
+
+Working on Suppliers Setup Search Bar making Stored Procedures
+Working on Merging both the projects
+Testing Purchase Order and Others Pages
+Working on Purchase Order View Pagenation making stored procedures
+
+27-9-2019 work
+Working on Purchase Order View Pagenation making stored procedures
+Testing All the functionalities of
+Product setup 
+Product Price 
+Location setup 
+Batch setup 
+Customer setup
+Supplier setup 
+Department setup 
+Purchase order
+Purchase requisition
+
+30-9-2019 work
+Merging All the projects together and Solving the Bugs like 
+Supplier setup = Error in Pagenation,Error in Gridview 
+Purchase Order = Error in pagenation
+And After Testing
+Reading the OSDA E Document for Supplier Bill understanding the requirnment of document 
+Making the report of merged projects and its functionality
+
+1-10-2019
+Working on Supplier Bill Functionality Binding different fields like Date,year,period
+Binding different drop downs like Supplier and Product
+Working on the Parent Document Selection 
+Working on the Supplier Bill parent document cash memos bindings and Solving Errors 
+Adding current cash memos bindings and Deletion of the Binded cash memos.
+
+2-10-2019
+Woking on user interface of Stock Adjustment Note General 
+Working on user interface of Stock Adjustment Note List 
+Working on the Supplier Bill View User interface Screen
+Working on the Supplier Bill Search Bar and Pagenation Functionality 
+
+3-10-2019
+Working on user interface of Material Issue Note
+Working on user interface of Stock Tansfer In
+Wokring Supplier Bill Add functionality and Update functionality Code
+
+4-10-2019
+Mapping the parameters for Supplier Bill Add functionality and Update functionality
+Working on the Supplier Bill Independent document selection and cash memos bindings and Deletion of the Binded cash memos.
+Solving error in purchase order 
+Reading OSDA Supplier Bill complete Document
+Working on all the tabs functionality of Supplier Bill,Adjusting the user interface of Supplier Bill.
+Working on all the tabs functionality of Good Receive Note,Adjusting the user interface of Good Receive Note.
+Working on all the tabs functionality of Purchase Voucher,Adjusting the user interface of Purchase Voucher.

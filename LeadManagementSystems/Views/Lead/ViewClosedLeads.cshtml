@@ -1,0 +1,436 @@
+﻿
+@{
+    ViewBag.Title = "ViewClosedLeads";
+}
+
+
+
+
+<section class="content-header text-center text-uppercase">
+    <h1><strong>Closed Leads</strong></h1>
+</section>
+
+<!-- Main content -->
+<section class="content ">
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-sm-12 ">
+            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th colspan="1">Date</th>
+                        <th colspan="1">Time</th>
+                        <th colspan="1">Lead Type</th>
+                        <th colspan="1">Client Name</th>
+                        <th colspan="1">Contact No</th>
+                        <th colspan="1">Email</th>
+                        <th colspan="1">Timezone</th>
+                        <th colspan="1">Action</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @*<tr role="row" class="odd">
+                            <td>July 15 2019</td>
+                            <td>9:00am</td>
+                            <td>Direct Call</td>
+                            <td>Mike Anderson</td>
+                            <td>123-456-4589</td>
+                            <td>test@gmail.com</td>
+                            <td>EST</td>
+                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">View</button>&nbsp;<button type="button" class="btn btn-primary">Edit</button></td>
+                        </tr>*@
+
+
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title text-uppercase" id="exampleModalLabel"><strong>Active LEADS</strong></h4>
+                </div>
+                <div class="modal-body" id="modelbody" style="padding-top:0px;">
+                    <table id="example1" class="table table-bordered table-striped" role="grid" style="margin:0px;">
+
+                        <tbody>
+                            <tr role="row" class="odd">
+                                <td><strong>Date</strong></td>
+                                <td id="ldate">abc</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Time</strong></td>
+                                <td id="ltime">9:00 AM</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Lead Type</strong></td>
+                                <td id="ltype">Direct Call	</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Client Name</strong>	</td>
+                                <td id="lclient">Mike Anderson</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Contact No</strong></td>
+                                <td id="lcontact">123-456-4589</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Email</strong></td>
+                                <td id="lemail">test@gmail.com</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Timezone</strong></td>
+                                <td id="ltimezone">EST</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Location</strong></td>
+                                <td id="llocation">19th Avenue, Adison City, New Jersey</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>IP</strong></td>
+                                <td id="lip">192.123.452.33</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Active / In Active</strong></td>
+                                <td id="lleadstatus">Open</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Budget (idea)</strong></td>
+                                <td id="lbudget">$100.0</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Last Status (as available)</strong></td>
+                                <td id="llaststatus">talk with him on Aug 8, he'll sent us requirements by Monday Jan  30 2020, he'll send project details for POC</td>
+                            </tr>
+
+                            <tr role="row" class="odd">
+                                <td><strong>Next Action Plan</strong></td>
+                                <td id="lnxt">call him on Thursday Feb 4th 2020 at 1:00pm</td>
+                            </tr>
+
+                            <tr role="row" class="even">
+                                <td><strong>Initial Requirements</strong></td>
+                                <td id="linitailarequiremnts">A company deals in specific law/legal/ jail specific software products, currently they have desktop applications developed in C++ and Ms. SQL Server. They want to have a cloud based web enabled application and express intensions to pay for the development services. Proposed PHP and My Sql as back end technology, Cary has a meeting with other team members. It has been agreed to have a follow-up call on Monday.</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--<div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        @*<div class="col-sm-12 text-center">
+                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                    <ul class="pagination">
+                        <li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li>
+                        <li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li>
+                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">2</a></li>
+                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0">3</a></li>
+                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0">4</a></li>
+                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0">5</a></li>
+                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0">6</a></li>
+                        <li class="paginate_button next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                </div>
+            </div>*@
+    </div>
+</section>
+
+@section MyScripts {
+
+    @*<script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //$.ajax({
+            //    url: "/Lead/GetActiveLeads",
+            //    success: function (data) {
+            //        bindCustomersInDataTable(data);
+            //    }
+
+
+
+            //});
+
+        });
+        $.ajax({
+            url: "/Lead/GetClosedLeads",
+            success: function (data) {
+                if(@Session["RoleId"].ToString()=="1"){
+                    bindCustomersInDataTable(data);
+                }
+                else{
+                    bindCustomersInDataTableForUser(data);
+                }
+            }
+
+
+
+        });
+
+        
+        function ShowCustomer(CustomerID) {
+
+            var url = "/Lead/ShowLead?Id=" + CustomerID;
+            $.post(url, function (data) {
+                //alert("Data Loaded: " + data);
+
+                $("#ldate").text(moment(data.data[0].LeadDate).format('DD/MM/YYYY'));
+                $("#ltime").text(data.data[0].LeadTime)
+                $("#ltype").text(data.data[0].LeadTypeName)
+                $("#lclient").text(data.data[0].ClientName)
+                $("#lcontact").text(data.data[0].ContactNo)
+                $("#lemail").text(data.data[0].Email)
+                $("#ltimezone").text(data.data[0].TimeZoneName)
+                $("#llocation").text(data.data[0].Location)
+                $("#lip").text(data.data[0].IPAddress)
+                if (data.data[0].LeadStatus == true) {
+                    $("#lleadstatus").text('Active');
+                }
+                else {
+                    $("#lleadstatus").text('Closed');
+                }
+
+                $("#lbudget").text(data.data[0].Budget)
+                $("#llaststatus").text(data.data[0].LastStatus)
+                $("#lnxt").text(data.data[0].NextPlan)
+                $("#linitailarequiremnts").text(data.data[0].IntialRequirements)
+
+
+               // console.log(data.data[0].ClientName);
+
+
+            });
+
+            //$("#modelbody").load(url, function (e) {
+
+            //    console.log("abcd");
+            //   // $("#exampleModal").modal("show");
+            //});
+
+
+            $("#exampleModal").modal("show");
+
+        }
+        function ConfirmDelete(CustomerID) {
+
+            var url = "/Lead/ShowSingleLead?Id=" + CustomerID;
+            window.location.href = url;
+
+        }
+        function ConfirmDeletee(CustomerID) {
+            
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Delete!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Lead/DeleteLead?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                Command: toastr["success"]("success", "Delete successful")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.reload();
+                                //toastr.options.timeOut = 1000;
+                                //toastr.options.fadeOut = 1000;
+                                //toastr.options.onHidden = function () {
+                                //    console.log("abc")
+                                //    // this will be executed after fadeout, i.e. 2secs after notification has been show
+                                //    window.location.reload();
+                                //};
+
+
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+        function bindCustomersInDataTable(data) {
+            var status = "Blocked".toString();
+            console.log(data);
+            var table = $('#example1').DataTable({
+                data: data.data,
+
+
+                columns: [
+
+                    {
+                        "data": "LeadDate",
+                        "render": function (data, type, row) {
+                            //return ConvertToDate(data);
+                            return moment(data).format('DD/MM/YYYY');
+                            // return moment(row).format('DD/MM/YYYY hh:mm:ss');
+                            //return '<a href="#" class="btn btn-info" onclick="UpdateGroupDescription(' + Id + ')"><i class="fa fa-eye">Update And View Description</i><a href="#" class="btn btn-info" onclick="ViewGroupFiles(' + Id + ')"><i class="fa fa-eye">View Files</i>'
+                        }
+                    },
+
+
+                    //{ data: 'LeadDate' },
+                    { data: 'LeadTime' },
+
+                    { data: 'LeadTypeName' },//or { data: 'MONTH', title: 'Month' }`
+                    { data: 'ClientName' },
+                    { data: 'ContactNo' },
+                    { data: 'Email' },
+                    { data: 'TimeZoneName' },
+                    {
+                        "data": "LeadID",
+                        "render": function (ID, type, full, meta) {
+                            return '<a href="#" class="btn btn-success" onclick="ShowCustomer(' + ID + ')">View</a> <a href="#" class="btn btn-primary" onclick="ConfirmDelete(' + ID + ')">Edit</a> <a href="#" class="btn btn-danger" onclick="ConfirmDeletee(' + ID + ')">Delete</a>'
+
+                            // return '<button type="button" class="btn btn-danger" onclick="ShowEmployee(' + ID + ') >View</button>&nbsp;<button type="button" class="btn btn-primary">Edit</button>'
+                            // return '<img  src="'+ID+'" />'
+                            //return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a>'
+
+                        },
+                        "orderable": true,
+                        "searchable": true,
+
+
+                    }
+                ]
+            });
+
+        }
+        function bindCustomersInDataTableForUser(data) {
+            var status = "Blocked".toString();
+            console.log(data);
+            var table = $('#example1').DataTable({
+                data: data.data,
+
+
+                columns: [
+
+                    {
+                        "data": "LeadDate",
+                        "render": function (data, type, row) {
+                            //return ConvertToDate(data);
+                            return moment(data).format('DD/MM/YYYY');
+                            // return moment(row).format('DD/MM/YYYY hh:mm:ss');
+                            //return '<a href="#" class="btn btn-info" onclick="UpdateGroupDescription(' + Id + ')"><i class="fa fa-eye">Update And View Description</i><a href="#" class="btn btn-info" onclick="ViewGroupFiles(' + Id + ')"><i class="fa fa-eye">View Files</i>'
+                        }
+                    },
+
+
+                    //{ data: 'LeadDate' },
+                    { data: 'LeadTime' },
+
+                    { data: 'LeadTypeName' },//or { data: 'MONTH', title: 'Month' }`
+                    { data: 'ClientName' },
+                    { data: 'ContactNo' },
+                    { data: 'Email' },
+                    { data: 'TimeZoneName' },
+                    {
+                        "data": "LeadID",
+                        "render": function (ID, type, full, meta) {
+                            return '<a href="#" class="btn btn-danger" onclick="ShowCustomer(' + ID + ')">View</a> <a href="#" class="btn btn-primary" onclick="ConfirmDelete(' + ID + ')">Edit</a>'
+
+                            // return '<button type="button" class="btn btn-danger" onclick="ShowEmployee(' + ID + ') >View</button>&nbsp;<button type="button" class="btn btn-primary">Edit</button>'
+                            // return '<img  src="'+ID+'" />'
+                            //return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a>'
+
+                        },
+                        "orderable": true,
+                        "searchable": true,
+
+
+                    }
+                ]
+            });
+
+        }
+    </script>
+}
+

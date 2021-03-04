@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "ViewUsers";
+}
+<section class="content-header text-center text-uppercase">
+    <h1><strong>View User</strong></h1>
+</section>
+
+<!-- Main content -->
+<section class="content ">
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-sm-12 ">
+            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th colspan="1">Name</th>
+                        <th colspan="1">Porfile Pic</th>
+                        <th colspan="1">Email</th>
+                        <th colspan="1">User Name</th>
+                        <th colspan="1">Password</th>
+                       
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @*<tr role="row" class="odd">
+                        <td>Admin</td>
+                        <td><img class="" width="40px" src="dist/img/user3-128x128.jpg"></td>
+                        <td>admin@admin.com</td>
+                        <td>Admin123</td>
+                        <td>********</td>
+                        <td>********</td>
+                    </tr>*@
+
+                    
+
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+
+        @*<div class="col-sm-12 text-center">
+            <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li>
+                    <li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">2</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0">3</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0">4</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0">5</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0">6</a></li>
+                    <li class="paginate_button next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0">Next</a></li>
+                </ul>
+            </div>
+        </div>*@
+    </div>
+</section>
+
+@section MyScripts {
+
+@*<script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+          
+
+
+        });
+        $.ajax({
+            url: "/User/ViewActiveUsers",
+            success: function (data) {
+                bindCustomersInDataTable(data);
+            }
+
+
+
+        });
+
+        function bindCustomersInDataTable(data) {
+            var status = "Blocked".toString();
+            console.log(data);
+            var table = $('#example1').DataTable({
+                data: data.data,
+
+
+                columns: [
+
+                    { data: 'FirstName' },
+                    //{ data: 'ProfilePicPath' },
+                    {
+                        "data": "ProfilePicPath",
+                        "render": function (ID, type, full, meta) {
+                            return '<img class="" width="40px" src="' + ID + '" />'
+                            //return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a>'
+
+                        },
+                        "orderable": true,
+                        "searchable": true,
+
+
+                    },
+                    { data: 'Email' },//or { data: 'MONTH', title: 'Month' }`
+                    { data: 'UserName' },
+                    { data: 'Password' }
+                    //{
+                    //    "data": "ProfilePicPath",
+                    //    "render": function (ID, type, full, meta) {
+                    //        return '<img  src="'+ID+'" />'
+                    //        //return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a>'
+
+                    //    },
+                    //    "orderable": true,
+                    //    "searchable": true,
+
+
+                    //}
+                ]
+            });
+
+        }
+        
+    </script>
+}

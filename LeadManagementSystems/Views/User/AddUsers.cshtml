@@ -1,0 +1,174 @@
+﻿@model LeadManagementSystems.Models.RegisterUserModel
+@{
+    ViewBag.Title = "AddUsers";
+}
+
+  <!-- Content Header (Page header) -->
+<section class="content-header text-center text-uppercase">
+    <h1><strong>Add User</strong></h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <form id="rgsteruser" enctype = "multipart/form-data" method="post" class="form-horizontal">
+                    <div class="box-body">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-4">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Name", @onkeypress = "return onlyAlphabets(event)" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <label for="profilepic" class="col-sm-2 control-label">Porfile Pic</label>
+                            <div class="col-sm-4">
+                                <input type="file" class="form-control" id="profilepic" placeholder="Picture">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-4">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Email" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <label for="inputEmail3" class="col-sm-2 control-label">User Name</label>
+                            <div class="col-sm-4">
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "User Name" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-4">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+
+                            <label for="inputEmail3" class="col-sm-2 control-label">Confirm Password</label>
+                            <div class="col-sm-4">
+                                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Re-Enter Password" } })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer text-center ">
+                        <button type="button" id="btnregisteruser" class="btn btn-danger text-uppercase" style="padding: 8px 30px;">Add User</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+
+@section MyScripts {
+@*<script type="text/javascript" src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="~/Content/dist/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="~/Content/dist/js/jquery.validate.unobtrusive.min.js"></script>
+<link href="~/Content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+<script src="~/Content/plugins/toastr/toastr.min.js"></script>*@
+<script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+           
+
+
+        });
+
+        $('#btnregisteruser').click(function (e) {
+            //console.log("dasa");
+            e.preventDefault();
+            var form = $("#rgsteruser");
+            var formdata = new FormData(form[0]);
+            var file = $("#profilepic").get(0).files;
+            formdata.append("ProfilePictureFile", file[0]);
+            console.log(file)
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: "/User/AddNewUser",
+                    data: formdata,// $(form).serialize(),
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    success: function (res) {
+                        if (res.code == 200) {
+                            Command: toastr["success"]("success", "successful")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                            window.location.href = "/Dashboard/Dashboard"
+                        }
+                        else if (res.code != 200) {
+                                Command: toastr["error"]("Invalid Entry", " Failed")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+
+                })
+            }
+            else {
+                return false;
+            }
+
+
+
+        });
+        function onlyAlphabets(e, t) {
+            return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
+        }
+</script>
+}

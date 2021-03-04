@@ -1,0 +1,77 @@
+﻿@{ 
+    //int id = Convert.ToInt32(Session["UserId"].ToString());
+    if (Session["RoleID"].ToString() == "1")
+    {//admn menu
+      <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- sidebar menu: : style can be found in sidebar.less  AddLeadType-->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active"> <a href="/Dashboard/Dashboard"> <i class="fa fa-dashboard"></i> <span>Dashboard</span> </a> </li>
+            <li class="treeview">
+                <a href="#"> <i class="fa fa-edit"></i> <span>Leads</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                <ul class="treeview-menu">
+                    <li><a href="/Lead/AddLead"><i class="fa fa-circle-o"></i> Add leads</a></li>
+                    <li><a href="/Lead/AddLeadType"><i class="fa fa-circle-o"></i> Add lead Type</a></li>
+                    <li><a href="/Lead/ViewActiveLeads"><i class="fa fa-circle-o"></i> Active leads</a></li>
+                    <li><a href="/Lead/ViewFollowUpLeads"><i class="fa fa-circle-o"></i> Todays Follow Up</a></li>
+                    <li><a href="/Lead/ViewClosedLeads"><i class="fa fa-circle-o"></i> Closed Leads</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"> <i class="fa fa-user"></i> <span>Users</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                <ul class="treeview-menu">
+                    <li><a href="/User/AddUsers"><i class="fa fa-circle-o"></i> Add User</a></li>
+                    <li><a href="/User/ViewUsers"><i class="fa fa-circle-o"></i> View User</a></li>
+
+                </ul>
+            </li>
+            <li class=""> <a href="/Report/Report"> <i class="fa fa-file-o"></i> <span>Reports</span> </a> </li>
+            <li class=""> <a href="/ImportRecord/ImportBulkReport"> <i class="fa fa-file-o"></i> <span>Import Bulk Report</span> </a> </li>
+            <!--<li><a href="details.html"><i class="fa fa-file-o"></i> <span>Details</span></a></li>
+                        <li><a href="rates.html"><i class="fa fa-pie-chart"></i> <span>Rates</span></a></li>
+                        <li><a href="rules.html"><i class="fa fa-circle-o"></i> <span>Rules & Regulation</span></a></li>-->
+        </ul>
+    </section>
+
+    <!-- /.sidebar -->
+</aside>
+    }
+    else
+    {
+      
+        //users menu
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active"> <a href="/Dashboard/Dashboard"> <i class="fa fa-dashboard"></i> <span>Dashboard</span> </a> </li>
+                    <li class="treeview">
+                        <a href="#"> <i class="fa fa-edit"></i> <span>Leads</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                        <ul class="treeview-menu">
+                           
+                            <li><a href="/Lead/ViewActiveLeads/"><i class="fa fa-circle-o"></i> Active Leads</a></li>
+                            <li><a href="/Lead/ViewClosedLeads/"><i class="fa fa-circle-o"></i> Close Leads</a></li>
+                            <li><a href="/Lead/ViewFollowUpLeads/"><i class="fa fa-circle-o"></i> FollowUp Leads</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class=""> <a href="/Report/Report"> <i class="fa fa-file-o"></i> <span>Reports</span> </a> </li>
+                    <li class=""> <a href="/ImportRecord/ImportBulkReport"> <i class="fa fa-file-o"></i> <span>Import Bulk Report</span> </a> </li>
+                    <!--<li><a href="details.html"><i class="fa fa-file-o"></i> <span>Details</span></a></li>
+                                <li><a href="rates.html"><i class="fa fa-pie-chart"></i> <span>Rates</span></a></li>
+                                <li><a href="rules.html"><i class="fa fa-circle-o"></i> <span>Rules & Regulation</span></a></li>-->
+                </ul>
+            </section>
+
+            <!-- /.sidebar -->
+        </aside>
+    }
+}

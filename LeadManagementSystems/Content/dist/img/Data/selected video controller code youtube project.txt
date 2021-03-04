@@ -1,0 +1,53 @@
+   public ActionResult selected_video(string video, Add_videos tbl, int idd, string v_dis)
+        {
+
+            TempData["vl"] = video;
+            TempData["cid"] = idd;
+            TempData["v_dis"] = v_dis;
+            tbl.video = video;
+            tbl.Category_id = idd;
+            tbl.discription = v_dis; 
+            ad.Add_videos.Where(e => e.video == video && e.Category_id == idd).FirstOrDefault();
+
+            List<comments_form> commentlist = new List<comments_form>();
+            var com_form = ad.comments_form.Where(e => e.discription == video).ToList();
+            foreach (var item in com_form)
+            {
+                commentlist.Add(item);
+            }
+            Selected_video_model svm = new Selected_video_model();
+            svm.commentlist = commentlist;
+
+            List<Add_videos> suggested_videos = new List<Add_videos>();
+            tbl.Category_id = idd;
+            var sug_video = ad.Add_videos.Where(e => e.Category_id == idd).ToList();
+
+            // sug video k andar jitne item ha wo item k pas ajaye ge
+            foreach (var item in sug_video)
+            {
+                suggested_videos.Add(item);
+            }
+            svm.suggested_videos = suggested_videos;
+
+            if (Session["UserId"] == null)
+            {
+                return View(svm);
+            }
+            else
+            {
+                History_tbl obj = new History_tbl();
+                var c = int.Parse(Session["UserId"].ToString());
+                obj.user_id = c;
+                obj.video = video;
+                obj.discription = v_dis;
+                obj.Category_id = idd;
+                ad.History_tbl.Add(obj);
+                ad.SaveChanges();
+
+
+            }
+
+
+            return View(svm);
+
+        }

@@ -1,0 +1,404 @@
+﻿@model LeadManagementSystems.Models.LeadModel
+@{
+    ViewBag.Title = "EditLead";
+}
+
+<section class="content-header text-center text-uppercase">
+    <h1><strong>Edit Lead</strong></h1>
+</section>
+
+<!-- Main content -->
+@{
+    if (Session["RoleId"].ToString() == "1")
+    {
+        <section class="content">
+
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-info">
+                        <form id="rgstrlead" class="form-horizontal">
+                            <div class="box-body">
+                                @Html.HiddenFor(model => model.ID)
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Follow Up Date</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.LeadDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Name" } })
+                                        @Html.ValidationMessageFor(model => model.LeadDate, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Time</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.LeadTime, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Time", type = "time" } })
+                                        @Html.ValidationMessageFor(model => model.LeadTime, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Lead Type</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.LeadTypeID, new SelectList(ViewBag.LeadType as List<LeadManagementSystems.LeadType>, "ID", "LeadTypeName",1), "Select Type", new { @Class = "form-control font-weight-bold" })
+                                        @Html.ValidationMessageFor(model => model.LeadTypeID, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Client Name</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.ClientName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Client Name" } })
+                                        @Html.ValidationMessageFor(model => model.ClientName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Contact No</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contact No", @onkeypress = "return isNumber(event)" } })
+                                        @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Time Zone</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.TimeZoneID, new SelectList(ViewBag.TimeZone as List<LeadManagementSystems.TimeZone>, "ID", "TimeZone1"), "Select TimeZone", new { @Class = "form-control font-weight-bold" })
+                                        @Html.ValidationMessageFor(model => model.TimeZoneID, "", new { @class = "text-danger" })
+
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Location </label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control", @placeholder = "Location" } })
+                                        @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">IP</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.IPAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "IPAddress" } })
+                                        @Html.ValidationMessageFor(model => model.IPAddress, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Active / In Active</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.LeadStatus, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Open", Value="true"},
+                        new SelectListItem() {Text = "Closed", Value="false"}
+                        },
+                        new { @Class = "form-control font-weight-bold" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Budget (idea)</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @class = "form-control", @placeholder = "Budget" } })
+                                        @Html.ValidationMessageFor(model => model.Budget, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Next Action Plan</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.NextPlan, new { htmlAttributes = new { @class = "form-control", @placeholder = "Next Action Plan" } })
+                                        @Html.ValidationMessageFor(model => model.NextPlan, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Last Status (as available)</label>
+                                    <div class="col-sm-4">
+                                        @Html.TextAreaFor(model => model.LastStatus, new { @placeholder = "Last Status (as available)", @class = "form-control", rows = "3" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LastStatus, "", new { @class = "text-danger" })
+
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Initial Requirements</label>
+                                    <div class="col-sm-4">
+                                        @Html.TextAreaFor(model => model.IntialRequirements, new { @placeholder = "Intial Requirements", @class = "form-control", rows = "3" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.IntialRequirements, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Assign Lead</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.AssignedToUSerID, new SelectList(ViewBag.User as List<LeadManagementSystems.USER>, "ID", "FirstName"), "Select User", new { @Class = "form-control font-weight-bold" })
+                                        @Html.ValidationMessageFor(model => model.AssignedToUSerID, "", new { @class = "text-danger" })
+
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer text-center ">
+                                <button type="button" id="btnaddlead" class="btn btn-danger text-uppercase" style="padding: 8px 30px;">Update Lead</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </section>
+    }
+    else
+    {
+        <section class="content">
+
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-info">
+                        <form id="rgstrlead" class="form-horizontal">
+                            <div class="box-body">
+                                @Html.HiddenFor(model => model.ID)
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Follow Up Date</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.LeadDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Name" } })
+                                        @Html.ValidationMessageFor(model => model.LeadDate, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Time</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.LeadTime, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Time",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.LeadTime, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Lead Type</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.LeadTypeID, new SelectList(ViewBag.LeadType as List<LeadManagementSystems.LeadType>, "ID", "LeadTypeName"), "Select Type", new { @Class = "form-control font-weight-bold",@readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.LeadTypeID, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Client Name</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.ClientName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Client Name",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.ClientName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Contact No</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contact No",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Time Zone</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.TimeZoneID, new SelectList(ViewBag.TimeZone as List<LeadManagementSystems.TimeZone>, "ID", "TimeZone1"), "Select TimeZone", new { @Class = "form-control font-weight-bold",@readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.TimeZoneID, "", new { @class = "text-danger" })
+
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Location </label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control", @placeholder = "Location",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">IP</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.IPAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "IPAddress",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.IPAddress, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Active / In Active</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.LeadStatus, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Open", Value="true"},
+                        new SelectListItem() {Text = "Closed", Value="false"}
+                        },
+                        new { @Class = "form-control font-weight-bold" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Budget (idea)</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @class = "form-control", @placeholder = "Budget",@readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.Budget, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Next Action Plan</label>
+                                    <div class="col-sm-4">
+                                        @Html.EditorFor(model => model.NextPlan, new { htmlAttributes = new { @class = "form-control", @placeholder = "Next Action Plan" } })
+                                        @Html.ValidationMessageFor(model => model.NextPlan, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Last Status (as available)</label>
+                                    <div class="col-sm-4">
+                                        @Html.TextAreaFor(model => model.LastStatus, new { @placeholder = "Last Status (as available)", @class = "form-control", rows = "3" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LastStatus, "", new { @class = "text-danger" })
+
+
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Initial Requirements</label>
+                                    <div class="col-sm-4">
+                                        @Html.TextAreaFor(model => model.IntialRequirements, new { @placeholder = "Intial Requirements", @class = "form-control", rows = "3",@readonly = "readonly" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.IntialRequirements, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Assign Lead</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.AssignedToUSerID, new SelectList(ViewBag.User as List<LeadManagementSystems.USER>, "ID", "FirstName"), "Select User", new { @Class = "form-control font-weight-bold",@readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.AssignedToUSerID, "", new { @class = "text-danger" })
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer text-center ">
+                                <button type="button" id="btnaddlead" class="btn btn-danger text-uppercase" style="padding: 8px 30px;">Update Lead</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </section>
+    }
+
+}
+
+@section MyScripts {
+    @*<script type="text/javascript" src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="~/Content/dist/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="~/Content/dist/js/jquery.validate.unobtrusive.min.js"></script>
+        <link href="~/Content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+        <script src="~/Content/plugins/toastr/toastr.min.js"></script>*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+
+
+
+        });
+
+        $('#btnaddlead').click(function (e) {
+            //console.log("dasa");
+            e.preventDefault();
+            var form = $("#rgstrlead");
+            var formdata = new FormData(form[0]);
+            //var file = $("#profilepic").get(0).files;
+            //formdata.append("ProfilePictureFile", file[0]);
+            //console.log(file)
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Lead/AddNewLead",
+                    data: $(form).serialize(),
+                    //contentType: false,
+                    //processData: false,
+                    //cache: false,
+                    success: function (res) {
+                        if (res.code == 200) {
+                            Command: toastr["success"]("success", "Added successfuly")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                            window.location.href = "/Dashboard/Dashboard"
+                        }
+                        else if (res.code != 200) {
+                                Command: toastr["error"]("Failed", "")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+
+                })
+            }
+            else {
+                return false;
+            }
+
+
+
+        });
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+}

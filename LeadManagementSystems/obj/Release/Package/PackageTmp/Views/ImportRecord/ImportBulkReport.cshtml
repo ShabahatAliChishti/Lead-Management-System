@@ -1,0 +1,231 @@
+﻿
+@{
+    ViewBag.Title = "ImportBulkReport";
+}
+
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Import Bulk Report</h1>
+            </div>
+           
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- general form elements disabled -->
+                <div>
+                    <div class="card-header">
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="filecontents">
+                            <form id="employeeform" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <!-- text input -->
+                                        <div class="form-group">
+
+                                            <label>Upload Excel File</label>
+                                            <input type="file" id="uploadreportfile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="uploadFile" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="button" id="btnuploadfile" class="form-control btn btn-primary" value="Upload Excel File">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="imageloader" style="display:none;">
+                            <img src="~/Content/dist/img/credit/loader.gif" />
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section MyScripts {
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+
+
+
+            $("#uploadreportfile").change(function () {
+                var fileinput = document.getElementById("uploadreportfile");
+                var filePath = fileinput.value;
+
+
+                console.log(fileinput.files[0].type)
+                //for (var i = 0; i < fileinput.files.length; i++) {
+                //    if (fileinput.files[i].type != "application/vnd.ms-excel") {
+                //        //swal({
+                //        //    title: "Warning!",
+                //        //    text: "Please insert Only Image files",
+                //        //    type: "error"
+                //        //});
+                //        alert("Please Upload Only excel files");
+                //        $("#uploadreportfile").val('');
+                //    }
+                //    else {
+
+
+
+                //    }
+                //}
+            });
+
+
+
+            //add customer button event
+            $("#btnuploadfile").click(function (e) {
+                $.get("http://ipinfo.io", function (response) {
+                    console.log(response);
+                }, "jsonp");
+                e.preventDefault();
+                var form = $("#employeeform")[0];
+
+                var file = $("#uploadreportfile").get(0).files;
+                if (file.length > 0) {
+
+                    console.log(file);
+                    var formdata = new FormData(form);
+                    formdata.append("ExcelFileReport", file[0]);
+                    console.log(formdata)
+                    $.validator.unobtrusive.parse(form);
+                    if ($(form).valid()) {
+                        $("#filecontents").hide();
+                        $("#imageloader").show();
+                        $.ajax({
+                            type: "POST",
+                            url: "/ImportRecord/UploadReport",
+                            data: formdata,
+                            contentType: false,
+                            processData: false,
+
+                            success: function (res) {
+                                console.log(res);
+                                if (res.code == "200") {
+                                    Command: toastr["success"]("", "Added Successfuly")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "500",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                    setTimeout(function () {
+
+                                        window.location.href = "/Dashboard/Dashboard"
+                                    }, 3000);
+                                   
+                                }
+                                else if (res.code != 200) {
+                                    $("#imageloader").hide();
+                                    $("#filecontents").show();
+
+                                    Command: toastr["error"]("Invalid Sheet Data", " Failed")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                }
+                            },
+                            failure: function (res) {
+                                console.log(res);
+                            },
+                            err: function (res) {
+                                console.log(res);
+                            }
+
+                        })
+                    }
+                    else {
+                        return false;
+                    }
+                }
+
+                else {
+                    Command: toastr["error"]("File is not selected", " Failed")
+
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-center",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                }
+            });
+
+        });
+
+
+    </script>
+}

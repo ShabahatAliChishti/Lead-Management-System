@@ -1,0 +1,144 @@
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\ApplicationInsights.config
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\csc.exe
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Collections.Immutable.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Reflection.Metadata.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\vbc.exe
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe.config
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll.config
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.pdb
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.Web.Infrastructure.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.xml
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.dll
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.pdb
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\ApplicationInsights.config
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\csc.exe
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\vbc.exe
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll.config
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.pdb
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.xml
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.dll
+C:\Users\Shumyl.khan\Desktop\.net Project\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.pdb
+D:\Umer\LeadManagementSystem\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\ApplicationInsights.config
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\csc.exe
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\vbc.exe
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll.config
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\LeadManagementSystems.pdb
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\EntityFramework.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.Web.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Razor.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Webpages.Razor.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Helpers.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\bin\System.Web.Mvc.xml
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.dll
+C:\Users\Shumyl.khan\Desktop\LeadManagementSystems\LeadManagementSystems\obj\Release\LeadManagementSystems.pdb

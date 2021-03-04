@@ -1,0 +1,27 @@
+ <div class="col-md-4 single-right" style="margin-left:750px; margin-top:-1890px; position:fixed">
+                    <h3>Up Next</h3>
+                    <div class="single-grid-right">
+                        @*single Div of Suggestion start*@
+                        @foreach (var items in @Model.suggested_videos)
+                        {
+                            <div class="single-right-grids">
+                                <div class="video-frame">
+                                    <video style="width:200px; height:100px;" controls>
+                                        <source src="../Videos/@Url.Content(@items.video)" type="video/mp4" />
+                                    </video>
+                                </div>
+                                <div class="col-md-8 single-right-grid-right" style="margin-left:20px;">
+                                    <h5 class="bg-dark"> @Html.ActionLink(@items.discription, "selected_video", "Home", new { idd = items.Category_id, video = items.video, v_dis = items.discription }, htmlAttributes: new { @class = "register-wthree" })</h5>
+                                    <p class="author"><a href="#" class="author">@items.author</a></p>
+                                    <p class="views">2,114,200 views</p>
+
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        }
+                        @*single Div End*@
+
+                    </div>
+                </div>
+http://202.142.180.149:50/myHomePage.aspx
+reporting link its in transactions

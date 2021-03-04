@@ -1,0 +1,403 @@
+﻿@model LeadManagementSystems.Models.LeadModel
+@{
+    ViewBag.Title = "Report";
+}
+
+<section class="content-header text-center text-uppercase">
+    <h1><strong>Reports</strong></h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <form id="rgstrlead" class="form-horizontal">
+                    <div class="box-body">
+                        @Html.HiddenFor(model=>model.ID)
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-1 control-label"style="padding-right:10px">Follow Up Date</label>
+                            <div class="col-sm-2"style="padding-left:0">
+                                @Html.EditorFor(model => model.LeadDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Date", @id = "ldate" } })
+                                @Html.ValidationMessageFor(model => model.LeadDate, "", new { @class = "text-danger" })
+                            </div>
+                           
+                        @*</div>
+
+                        <div class="form-group row">*@
+                            <label for="inputEmail3" class="col-sm-1 control-label"style="padding-right:10px">Lead Type</label>
+                            <div class="col-sm-2"style="padding-left:0">
+                                @Html.DropDownListFor(model => model.LeadTypeID, new SelectList(ViewBag.LeadType as List<LeadManagementSystems.LeadType>, "ID", "LeadTypeName"),"Select Type" , new { @Class = "form-control font-weight-bold", @id = "ltype" })
+                                @Html.ValidationMessageFor(model => model.LeadTypeID, "", new { @class = "text-danger" })
+
+
+                            </div>
+                           
+                        @*</div>
+
+
+                     
+
+                        <div class="form-group row">*@
+                           
+                            <label for="inputEmail3" class="col-sm-1 control-label"style="padding-right:10px">Active / In Active</label>
+                            <div class="col-sm-2"style="padding-left:0">
+                               @Html.DropDownListFor(model => model.LeadStatus, new List<SelectListItem>
+
+                        {
+                        new SelectListItem() {Text = "Open", Value="true"},
+                        new SelectListItem() {Text = "Closed", Value="false"},
+                        new SelectListItem() {Text = "Both", Value=null}
+
+                        },
+                        new { @Class = "form-control font-weight-bold", @id = "lstatus" })
+                                @Html.ValidationMessageFor(model => model.LeadStatus, "", new { @class = "text-danger" })
+                            </div>
+                        @*</div>
+
+                            
+                        <div class="form-group row">*@
+                           
+                            <label for="inputEmail3" class="col-sm-1 control-label"style="padding-right:10px">Users</label>
+                            <div class="col-sm-2"style="padding-left:0">
+                                @Html.DropDownListFor(model => model.AssignedToUSerID, new SelectList(ViewBag.User as List<LeadManagementSystems.USER>, "ID", "FirstName"), "Select User", new { @Class = "form-control font-weight-bold", @id = "luser" })
+                                @Html.ValidationMessageFor(model => model.AssignedToUSerID, "", new { @class = "text-danger" })
+
+                            </div>
+
+
+
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label" style="padding-right:10px">Search By Year</label>
+                            <div class="col-sm-4" style="padding-left:0">                              
+                                <select id="yearforsearch" class="form-control">
+                                    <option value="0">Select Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+                        </div>
+                    <!-- /.box-body -->
+                    
+                        <div class="box-footer text-center col-md-12">
+                            <button type="button" id="btnaddlead" class="btn btn-danger text-uppercase" style="padding: 8px 30px;">Search</button>
+                        </div>
+                    
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+<section class="content ">
+    <div class="row">
+        <div class="col-sm-12 ">
+            <table id="example1" class="table box table-bordered table-striped dataTable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th colspan="1">Date</th>
+                        <th colspan="1">Time</th>
+                        <th colspan="1">Lead Type</th>
+                        <th colspan="1">Client Name</th>
+                        <th colspan="1">Contact No</th>
+                        <th colspan="1">Email</th>
+                        <th colspan="1">Timezone</th>
+                        <th colspan="1">Location</th>
+                        <th colspan="1">IP</th>
+                        <th colspan="1">Lead Status</th>
+                        <th colspan="1">Budget</th>
+                        <th colspan="1">Next Active Plan</th>
+                        <th colspan="1">Last Status</th>
+                        <th colspan="1">Status</th>
+                        <th colspan="1">Initial Requirements</th>
+                        <th colspan="1">Assign Lead</th>
+
+
+                        
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @*<tr role="row" class="odd">
+                            <td>July 15 2019</td>
+                            <td>9:00am</td>
+                            <td>Direct Call</td>
+                            <td>Mike Anderson</td>
+                            <td>123-456-4589</td>
+                            <td>test@gmail.com</td>
+                            <td>EST</td>
+                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">View</button>&nbsp;<button type="button" class="btn btn-primary">Edit</button></td>
+                        </tr>*@
+
+
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+    @section MyScripts {
+        @*<script type="text/javascript" src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+            <script type="text/javascript" src="~/Content/dist/js/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="~/Content/dist/js/jquery.validate.unobtrusive.min.js"></script>
+            <link href="~/Content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+            <script src="~/Content/plugins/toastr/toastr.min.js"></script>*@
+        <script type="text/javascript">
+
+
+
+            $(document).ready(function () {
+                
+               
+              var min = 2000,
+              max = new Date().getFullYear(),
+              select = document.getElementById('yearforsearch');
+              //var firstopt = document.createElement('option');
+              //opt.value = '0';
+              //opt.innerHTML = "Select Year";
+              
+              //select.appendChild(firstopt);
+                for (var i = min; i <= max; i++) {
+                    var opt = document.createElement('option');
+                    opt.value = i;
+                    opt.innerHTML = i;
+                    select.appendChild(opt);
+                }
+
+
+
+            });
+            $("#yearforsearch").change(function () {
+                if ($("#yearforsearch").val() > 0) {
+                    $("#ltype").attr("disabled", "disabled");
+                    $("#ldate").attr("disabled", "disabled");
+                    $("#lstatus").attr("disabled", "disabled");
+                    $("#luser").attr("disabled", "disabled");
+                    
+                    
+                    $("#ltype").val("");
+                    $("#ldate").val("");
+                    //$("#lstatus").val("");
+                    $("#luser").val("");
+                }
+                else {
+                    $("#ltype").removeAttr("disabled");
+                    $("#ldate").removeAttr("disabled");
+                    $("#lstatus").removeAttr("disabled");
+                    $("#luser").removeAttr("disabled");
+
+                }
+            })
+           
+
+            $(".date-picker").datepicker({
+                format: "yyyy-mm-dd"
+            })
+            var table;
+            $('#btnaddlead').click(function (e) {
+                //console.log("dasa");
+                e.preventDefault();
+                var form = $("#rgstrlead");
+                var formdata = new FormData(form[0]);
+                //var file = $("#profilepic").get(0).files;
+                formdata.append("Year", $("#yearforsearch").val());
+                console.log(formdata);
+                //console.log(file)
+                $.validator.unobtrusive.parse(form);
+                if ($("#yearforsearch").val() > 0) {
+                                                                            
+                    $.ajax({
+                        type: "POST",
+                        url: "/Report/SearchLead",
+                        data: formdata,// $(form).serialize(),
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        success: function (data) {
+                            console.log(data);
+                            if (data.code == 200) {
+                                if ($.fn.dataTable.isDataTable("#example1")) {
+                                    table.destroy();
+                                    bindCustomersInDataTable(data);
+                                }
+                                else {
+                                    bindCustomersInDataTable(data);
+                                }
+                            }
+
+                            else if (data.code != 200) {
+                                    Command: toastr["error"]("Failed", "Login Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    if ($(form).valid()) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Report/SearchLead",
+                            data: formdata,// $(form).serialize(),
+                            contentType: false,
+                            processData: false,
+                            cache: false,
+                            success: function (data) {
+                                console.log(data);
+                                if (data.code == 200) {
+                                    if ($.fn.dataTable.isDataTable("#example1")) {
+                                        table.destroy();
+                                        bindCustomersInDataTable(data);
+                                    }
+                                    else {
+                                        bindCustomersInDataTable(data);
+                                    }
+                                }
+
+                                else if (data.code != 200) {
+                                        Command: toastr["error"]("Failed", "Login Failed")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                }
+                            },
+                            failure: function (res) {
+                                console.log(res);
+                            },
+                            err: function (res) {
+                                console.log(res);
+                            }
+
+                        })
+                    }
+                    else {
+                        return false;
+                    }
+
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                console.log(data);
+                
+
+                table = $('#example1').DataTable({
+                    "scrollX": true,
+                    data: data.data,
+                    //"bAutoWidth": false,
+                    //width:'100%',
+                    dom: 'Bfrtip',
+                   
+                    buttons: [
+                        //{
+                        //extend: 'pdf',
+                        //title: 'Leads Report',
+                        //filename: 'Leads Report',
+                        //orientation:'landscape',
+                     
+                        //},
+                    {
+                        extend: 'excel',
+                        title: 'Leads Report',
+                        filename: 'Leads Report'
+                    }
+                    //, {
+                    //    extend: 'csv',
+                    //    filename: 'Leads Report'
+                    //}
+                    ],
+                  
+
+                    columns: [
+
+                        {
+                            "data": "LeadDate",
+                            "render": function (data, type, row) {
+                                //return ConvertToDate(data);
+                                return moment(data).format('DD/MM/YYYY');
+                                // return moment(row).format('DD/MM/YYYY hh:mm:ss');
+                                //return '<a href="#" class="btn btn-info" onclick="UpdateGroupDescription(' + Id + ')"><i class="fa fa-eye">Update And View Description</i><a href="#" class="btn btn-info" onclick="ViewGroupFiles(' + Id + ')"><i class="fa fa-eye">View Files</i>'
+                            }
+                        },
+
+
+                        //{ data: 'LeadDate' },
+                        { data: 'LeadTime' },
+
+                        { data: 'LeadTypeName' },//or { data: 'MONTH', title: 'Month' }`
+                        { data: 'ClientName' },
+                        { data: 'ContactNo' },
+                        { data: 'Email' },
+                        { data: 'TimeZoneName' },
+
+                        { data: 'Location' },
+                        { data: 'IPAddress' },//or { data: 'MONTH', title: 'Month' }`
+                        { data: 'LeadStatus' },
+                        { data: 'Budget' },
+                        { data: 'NextPlan' },
+                        { data: 'LastStatus' },
+                         { data: 'Status' },
+                        { data: 'IntialRequirements' },
+                        { data: 'UserName' },
+                       
+            
+                  
+                    ]
+                });
+               
+            }
+        </script>
+    }

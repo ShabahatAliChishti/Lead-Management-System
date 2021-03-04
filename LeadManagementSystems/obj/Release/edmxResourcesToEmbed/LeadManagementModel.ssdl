@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeadCRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LeadDate" Type="date" />
+    <Property Name="LeadType" Type="int" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+    <Property Name="TimeZone" Type="int" />
+    <Property Name="Location" Type="text" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="30" />
+    <Property Name="LeadStatus" Type="bit" />
+    <Property Name="Budget" Type="money" />
+    <Property Name="NextPlan" Type="text" />
+    <Property Name="IntialRequirements" Type="text" />
+    <Property Name="AssignedToUSerID" Type="int" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="LastStatus" Type="text" />
+    <Property Name="LeadTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LeadType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeadTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotificationText" Type="text" />
+    <Property Name="LinkText" Type="text" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="dateCreated" Type="datetime" />
+    <Property Name="N_To" Type="int" />
+    <Property Name="N_from" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="70" />
+    <Property Name="Status" Type="varchar" MaxLength="70" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeZone" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="70" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ProfilePicPath" Type="text" />
+  </EntityType>
+  <Function Name="sp_ReadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_readdatalead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="LeadCRMModelStoreContainer">
+    <EntitySet Name="Lead" EntityType="Self.Lead" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadType" EntityType="Self.LeadType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notifications" EntityType="Self.notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Role" EntityType="Self.tbl_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeZone" EntityType="Self.TimeZone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
